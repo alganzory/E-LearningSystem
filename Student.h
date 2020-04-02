@@ -44,15 +44,7 @@ struct Student {
 
 		name = n; ID = I; username = u; semester = sem;
 
-		for (int i = 0; i < COURSES.size(); i++) {
-			if (COURSES[i]->semester == semester) {
-
-				courses.emplace_back(COURSES[i]);
-				
-				COURSES[i]->studentCnt.insert(make_shared<Student> (*this));
-
-			}
-		}
+	
 	}
 
 	~Student() {};

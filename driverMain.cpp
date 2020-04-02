@@ -55,6 +55,10 @@ int main() {
 
 	};
 	
+	// Loading up courses for all students
+	for (auto& x : STUDENTS) {
+		loadC(x);
+	}
 
 	mainMenu();
 

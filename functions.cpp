@@ -133,7 +133,7 @@ void login(vector<string>& s, vector<string>& d, int trials, string message) {
 		for (auto& x : DOCTORS) {
 			if (username == x->username) {
 				for (auto v : welcome) {
-					cout << v; delay(0);
+					cout << v; delay(100);
 				}
 				for (int b = 0; b < x->name.size(); b++) {
 					cout << x->name[b];
@@ -255,7 +255,6 @@ void signUp() {
 
 		STUDENTS.emplace_back(make_shared<Student> (Student(name, ID, username, semester)));
 		loadC(STUDENTS.back());
-
 		L();
 		cout << "Account successfully created!" << endl;
 		delay(2000);
@@ -971,9 +970,6 @@ void makeSubmission(shared_ptr<Student>&s, shared_ptr<Assignment>& as) {
 	
 	as->subs.emplace(s, make_shared<Submission>(Submission(n, as, ans)));
 
-
-
-
 }
 
 void viewAss(shared_ptr<Assignment>& as, shared_ptr <Student>& s, shared_ptr<Course>& c) {
@@ -1153,7 +1149,7 @@ void gradeList(shared_ptr<Student>&s) {
 			if (y->subs.find(s) == y->subs.end()) continue;
 			if (y->subs[s]->graded == "Not graded") continue;
 			mark += y->subs[s]->mark;
-			mark /= y->fullMark;
+			
 		}
 		
 		cout << mark << "%";
